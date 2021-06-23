@@ -16,6 +16,9 @@
 		<div id="wrapper">
 			<div id="content">
 				<div class="blog-content">
+				<c:if test="${empty postVo }">
+					<p>게시글을 작성하세요<p>
+				</c:if>
 					<h4>${postVo.title }</h4>
 					<p>
 						${fn:replace(postVo.contents, newline, "<br/>") }
