@@ -84,7 +84,7 @@
 
 	<!-- mvc resources mapping -->
 	<mvc:resources location="file:/uploads-mysite/"
-		mapping="/assets/images/**" />
+		mapping="/assets/images/picture/**" />
 	
 	<!-- 6. MessageSource -->
 	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
