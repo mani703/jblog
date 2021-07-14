@@ -1,0 +1,14 @@
+<%
+	for(var i = 0; i < data.length; i++){
+		var vo = data[i];
+%>
+	<tr data-no='<%=vo.no%>'>
+		<td><%=i+1%></td>
+		<td><%=vo.name%></td>
+		<td><%=vo.count%></td>
+		<td><%=vo.desc.replace(/\n/gi, "<br/>")%></td>
+		<td><a href=''><img src="/jblog03/assets/images/delete.jpg"></a></td>
+	</tr>
+<%
+	}
+%>

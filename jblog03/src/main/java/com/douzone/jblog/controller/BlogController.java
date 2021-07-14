@@ -102,35 +102,35 @@ public class BlogController {
 			@PathVariable("id") String id, 
 			Model model) {
 		
-		List<CategoryVo> list = categoryService.findAll(id);
+//		List<CategoryVo> list = categoryService.findAll(id);
 		BlogVo blogVo = blogService.getBlog(id);
 		
 		model.addAttribute("blogVo", blogVo);
-		model.addAttribute("list", list);
+//		model.addAttribute("list", list);
 		return "blog/admin/category";
 	}
 	
-	@Auth
-	@RequestMapping(value="/admin/category", method=RequestMethod.POST)
-	public String adminCategory(
-			@PathVariable("id") String id, 
-			CategoryVo vo) {
-		
-		vo.setBlogId(id);
-		categoryService.categoryInsert(vo);
-		return "redirect:/" + id + "/admin/category";
-	}
-	
-	@Auth
-	@RequestMapping("/{pathNo1}/admin/category/delete")
-	public String adminDelete(
-			@PathVariable("id") String id,
-			@PathVariable("pathNo1") Long no) {
-		
-		postService.postDelete(no);
-		categoryService.categoryDelete(no);
-		return "redirect:/" + id + "/admin/category";
-	}
+//	@Auth
+//	@RequestMapping(value="/admin/category", method=RequestMethod.POST)
+//	public String adminCategory(
+//			@PathVariable("id") String id, 
+//			CategoryVo vo) {
+//		
+//		vo.setBlogId(id);
+//		categoryService.categoryInsert(vo);
+//		return "redirect:/" + id + "/admin/category";
+//	}
+//	
+//	@Auth
+//	@RequestMapping("/{pathNo1}/admin/category/delete")
+//	public String adminDelete(
+//			@PathVariable("id") String id,
+//			@PathVariable("pathNo1") Long no) {
+//		
+//		postService.postDelete(no);
+//		categoryService.categoryDelete(no);
+//		return "redirect:/" + id + "/admin/category";
+//	}
 	
 	@Auth
 	@RequestMapping("/admin/write")
